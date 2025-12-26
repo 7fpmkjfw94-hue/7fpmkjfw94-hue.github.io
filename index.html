@@ -76,7 +76,7 @@
         .hero {
             margin-top: 80px;
             height: 85vh;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23C4B5A0" width="1200" height="800"/><text x="600" y="400" font-size="48" fill="%23fff" text-anchor="middle" opacity="0.3">Hero Image Placeholder</text></svg>') center/cover;
+            background: url('images/hero-antarctica.jpg') center/cover;
             position: relative;
             display: flex;
             align-items: center;
@@ -333,15 +333,15 @@
         <section class="about-section">
             <div class="about-text">
                 <h2>Capturing Wild Moments</h2>
+                <!-- EDIT YOUR BIO TEXT BELOW -->
                 <p>With over a decade of experience traversing the globe's most remote and breathtaking landscapes, I specialize in capturing the raw beauty and intimate moments of wildlife in their natural habitats.</p>
                 <p>From the vast plains of East Africa to the icy wilderness of Antarctica, my lens tells stories of conservation, connection, and the remarkable diversity of life on our planet.</p>
                 <p>Each photograph represents hours of patient observation, a deep respect for nature, and a commitment to showcasing the world's most incredible creatures.</p>
+                <!-- END BIO TEXT -->
             </div>
             <div class="about-image">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
-                    <rect fill="#C4B5A0" width="600" height="500"/>
-                    <text x="300" y="250" font-size="24" fill="#fff" text-anchor="middle" opacity="0.3">About Image Placeholder</text>
-                </svg>
+                <!-- REPLACE 'images/about-photo.jpg' WITH YOUR IMAGE PATH -->
+                <img src="images/about-photo.jpg" alt="Trent Baker">
             </div>
         </section>
 
@@ -349,53 +349,43 @@
         <section class="galleries-section">
             <h2 class="section-title">Expeditions</h2>
             <div class="gallery-grid">
-                <div class="gallery-card" onclick="showGallery('tanzania')">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-                        <rect fill="#C4B5A0" width="400" height="400"/>
-                        <text x="200" y="200" font-size="20" fill="#fff" text-anchor="middle" opacity="0.3">Tanzania Photo</text>
-                    </svg>
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Tanzania</h3>
-                    </div>
-                </div>
-
-                <div class="gallery-card" onclick="showGallery('rwanda')">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-                        <rect fill="#B5A896" width="400" height="400"/>
-                        <text x="200" y="200" font-size="20" fill="#fff" text-anchor="middle" opacity="0.3">Rwanda Photo</text>
-                    </svg>
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Rwanda</h3>
-                    </div>
-                </div>
-
+                <!-- ALASKA 2021 -->
                 <div class="gallery-card" onclick="showGallery('alaska')">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-                        <rect fill="#A89B88" width="400" height="400"/>
-                        <text x="200" y="200" font-size="20" fill="#fff" text-anchor="middle" opacity="0.3">Alaska Photo</text>
-                    </svg>
+                    <img src="images/alaska-cover.jpg" alt="Alaska">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Alaska</h3>
+                        <h3 class="gallery-title">Alaska · 2021</h3>
                     </div>
                 </div>
 
-                <div class="gallery-card" onclick="showGallery('antarctica')">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-                        <rect fill="#B8AFA0" width="400" height="400"/>
-                        <text x="200" y="200" font-size="20" fill="#fff" text-anchor="middle" opacity="0.3">Antarctica Photo</text>
-                    </svg>
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Antarctica</h3>
-                    </div>
-                </div>
-
+                <!-- GALAPAGOS 2022 -->
                 <div class="gallery-card" onclick="showGallery('galapagos')">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-                        <rect fill="#CFC0AC" width="400" height="400"/>
-                        <text x="200" y="200" font-size="20" fill="#fff" text-anchor="middle" opacity="0.3">Galapagos Photo</text>
-                    </svg>
+                    <img src="images/galapagos-cover.jpg" alt="Galapagos">
                     <div class="gallery-overlay">
-                        <h3 class="gallery-title">Galápagos</h3>
+                        <h3 class="gallery-title">Galápagos · 2022</h3>
+                    </div>
+                </div>
+
+                <!-- TANZANIA 2023 -->
+                <div class="gallery-card" onclick="showGallery('tanzania')">
+                    <img src="images/tanzania-cover.jpg" alt="Tanzania">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Tanzania · 2023</h3>
+                    </div>
+                </div>
+
+                <!-- RWANDA 2023 -->
+                <div class="gallery-card" onclick="showGallery('rwanda')">
+                    <img src="images/rwanda-cover.jpg" alt="Rwanda">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Rwanda · 2023</h3>
+                    </div>
+                </div>
+
+                <!-- ANTARCTICA 2025 -->
+                <div class="gallery-card" onclick="showGallery('antarctica')">
+                    <img src="images/antarctica-cover.jpg" alt="Antarctica">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Antarctica · 2025</h3>
                     </div>
                 </div>
             </div>
@@ -432,60 +422,16 @@
     </div>
 
     <!-- Gallery Pages -->
-    <div id="gallery-tanzania" class="hidden">
-        <div style="height: 80px;"></div>
-        <section class="galleries-section">
-            <h2 class="section-title">Tanzania</h2>
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
-            </div>
-            <div class="gallery-grid">
-                <!-- Placeholder for Tanzania photos -->
-                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
-                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div id="gallery-rwanda" class="hidden">
-        <div style="height: 80px;"></div>
-        <section class="galleries-section">
-            <h2 class="section-title">Rwanda</h2>
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
-            </div>
-            <div class="gallery-grid">
-                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
-                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
     <div id="gallery-alaska" class="hidden">
         <div style="height: 80px;"></div>
         <section class="galleries-section">
-            <h2 class="section-title">Alaska</h2>
+            <h2 class="section-title">Alaska · 2021</h2>
             <div style="text-align: center; margin-bottom: 2rem;">
                 <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
             </div>
             <div class="gallery-grid">
-                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
-                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div id="gallery-antarctica" class="hidden">
-        <div style="height: 80px;"></div>
-        <section class="galleries-section">
-            <h2 class="section-title">Antarctica</h2>
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
-            </div>
-            <div class="gallery-grid">
+                <!-- ADD YOUR ALASKA PHOTOS HERE -->
+                <!-- Example: <img src="images/alaska/photo1.jpg" alt="Alaska wildlife"> -->
                 <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
                     <p style="font-size: 1.2rem;">Gallery images will be added here</p>
                 </div>
@@ -496,11 +442,60 @@
     <div id="gallery-galapagos" class="hidden">
         <div style="height: 80px;"></div>
         <section class="galleries-section">
-            <h2 class="section-title">Galápagos</h2>
+            <h2 class="section-title">Galápagos · 2022</h2>
             <div style="text-align: center; margin-bottom: 2rem;">
                 <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
             </div>
             <div class="gallery-grid">
+                <!-- ADD YOUR GALAPAGOS PHOTOS HERE -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
+                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="gallery-tanzania" class="hidden">
+        <div style="height: 80px;"></div>
+        <section class="galleries-section">
+            <h2 class="section-title">Tanzania · 2023</h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
+            </div>
+            <div class="gallery-grid">
+                <!-- ADD YOUR TANZANIA PHOTOS HERE -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
+                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="gallery-rwanda" class="hidden">
+        <div style="height: 80px;"></div>
+        <section class="galleries-section">
+            <h2 class="section-title">Rwanda · 2023</h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
+            </div>
+            <div class="gallery-grid">
+                <!-- ADD YOUR RWANDA PHOTOS HERE -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
+                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="gallery-antarctica" class="hidden">
+        <div style="height: 80px;"></div>
+        <section class="galleries-section">
+            <h2 class="section-title">Antarctica · 2025</h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
+            </div>
+            <div class="gallery-grid">
+                <!-- ADD YOUR ANTARCTICA PHOTOS HERE -->
                 <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
                     <p style="font-size: 1.2rem;">Gallery images will be added here</p>
                 </div>
