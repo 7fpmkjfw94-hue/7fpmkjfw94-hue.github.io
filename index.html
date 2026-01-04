@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trent Baker | Wildlife Photography</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #F5F1E8;
+            color: #2C2C2C;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(245, 241, 232, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Franklin Gothic Book', 'Arial Narrow', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #5C4A3A;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5C4A3A;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #8B7355;
+        }
+
+        .instagram-link {
+            font-size: 1.3rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            height: 85vh;
+            background: url('images/hero-antarctica.jpg') center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(245, 241, 232, 1) 0%, transparent 100%);
+            height: 30%;
+        }
+
+        /* About Section */
+        .about-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Franklin Gothic Book', 'Arial Narrow', sans-serif;
+            font-size: 2.5rem;
+            color: #5C4A3A;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #6B6B6B;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            background: #C4B5A0;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Galleries Section */
+        .galleries-section {
+            max-width: 1400px;
+            margin: 6rem auto 4rem;
+            padding: 0 5%;
+        }
+
+        .section-title {
+            font-family: 'Franklin Gothic Book', 'Arial Narrow', sans-serif;
+            font-size: 2.5rem;
+            color: #5C4A3A;
+            text-align: center;
+            margin-bottom: 3rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-card {
+            position: relative;
+            height: 400px;
+            background: #C4B5A0;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-card:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(92, 74, 58, 0.9) 0%, transparent 100%);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-card:hover .gallery-overlay {
+            background: linear-gradient(to top, rgba(92, 74, 58, 0.95) 0%, transparent 100%);
+        }
+
+        .gallery-title {
+            font-family: 'Franklin Gothic Book', 'Arial Narrow', sans-serif;
+            font-size: 1.8rem;
+            color: #F5F1E8;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            max-width: 800px;
+            margin: 6rem auto;
+            padding: 0 5%;
+        }
+
+        .contact-form {
+            background: #FFFFFF;
+            padding: 3rem;
+            border-radius: 2px;
+            box-shadow: 0 4px 20px rgba(92, 74, 58, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #5C4A3A;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #D4C4B0;
+            background: #F5F1E8;
+            border-radius: 2px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8B7355;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #5C4A3A;
+            color: #F5F1E8;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 2px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: 500;
+        }
+
+        .submit-btn:hover {
+            background: #8B7355;
+        }
+
+        /* Footer */
+        footer {
+            background: #5C4A3A;
+            color: #F5F1E8;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Hidden class for navigation */
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-section {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Trent Baker</div>
+            <div class="nav-links">
+                <a href="#" onclick="showHome(); return false;">Home</a>
+                <a href="#" onclick="showContact(); return false;">Contact</a>
+                <a href="https://www.instagram.com/trentrhbaker" target="_blank" class="instagram-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home-page">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="about-text">
+                <h2>Capturing Wild Moments</h2>
+                <!-- EDIT YOUR BIO TEXT BELOW -->
+                <p>I started my photography journey during highschool when I had a kickass photography teacher named Mr. Oleson for a visual arts class. I realized quickly my love for photography and bought a Canon EOS 250D. Ended up having the opportunity to go to Alaska on a National Geographic Linblad boat and met a bunch of photographers-- but the most important one was Cindy Mirabella. She gave me invaluable advice and insight into the world of photography and at the end of our trip she offered to give me some of her old crop sensor sony lenses. My newly acquired nifty-50 and 36-210mm lenses became my bread and butter as soon as I upgraded to a Sony a6400. Since then I've been taking my camera around everytime I go on a trip. Ive found that photography really helps me appreciate the outdoors and wildlife to a further degree. Hope you enjoy my portfolio. </p>
+                <p></p>
+                <p></p>
+                <!-- END BIO TEXT -->
+            </div>
+            <div class="about-image">
+                <!-- REPLACE 'images/about-photo.jpg' WITH YOUR IMAGE PATH -->
+                <img src="images/about-photo.jpg" alt="Trent Baker">
+            </div>
+        </section>
+
+        <!-- Galleries -->
+        <section class="galleries-section">
+            <h2 class="section-title">Adventures</h2>
+            <div class="gallery-grid">
+                <!-- ALASKA 2021 -->
+                <div class="gallery-card" onclick="showGallery('alaska')">
+                    <img src="images/alaska-cover.jpg" alt="Alaska">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Alaska · 2021</h3>
+                    </div>
+                </div>
+
+                <!-- GALAPAGOS 2022 -->
+                <div class="gallery-card" onclick="showGallery('galapagos')">
+                    <img src="images/galapagos-cover.jpg" alt="Galapagos">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Galápagos · 2022</h3>
+                    </div>
+                </div>
+
+                <!-- TANZANIA 2023 -->
+                <div class="gallery-card" onclick="showGallery('tanzania')">
+                    <img src="images/tanzania-cover.jpg" alt="Tanzania">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Tanzania · 2023</h3>
+                    </div>
+                </div>
+
+                <!-- RWANDA 2023 -->
+                <div class="gallery-card" onclick="showGallery('rwanda')">
+                    <img src="images/rwanda-cover.jpg" alt="Rwanda">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Rwanda · 2023</h3>
+                    </div>
+                </div>
+
+                <!-- ANTARCTICA 2025 -->
+                <div class="gallery-card" onclick="showGallery('antarctica')">
+                    <img src="images/antarctica-cover.jpg" alt="Antarctica">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Antarctica · 2025</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact-page" class="hidden">
+        <div style="height: 80px;"></div>
+        <section class="contact-section">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-form">
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Gallery Pages -->
+    <div id="gallery-alaska" class="hidden">
+        <div style="height: 80px;"></div>
+        <section class="galleries-section">
+            <h2 class="section-title">Alaska · 2021</h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
+            </div>
+            <div class="gallery-grid">
+                <!-- ADD YOUR ALASKA PHOTOS HERE -->
+                <!-- Example: <img src="images/alaska/photo1.jpg" alt="Alaska wildlife"> -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
+                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="gallery-galapagos" class="hidden">
+        <div style="height: 80px;"></div>
+        <section class="galleries-section">
+            <h2 class="section-title">Galápagos · 2022</h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
+            </div>
+            <div class="gallery-grid">
+                <!-- ADD YOUR GALAPAGOS PHOTOS HERE -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
+                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="gallery-tanzania" class="hidden">
+        <div style="height: 80px;"></div>
+        <section class="galleries-section">
+            <h2 class="section-title">Tanzania · 2023</h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
+            </div>
+            <div class="gallery-grid">
+                <!-- ADD YOUR TANZANIA PHOTOS HERE -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
+                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="gallery-rwanda" class="hidden">
+        <div style="height: 80px;"></div>
+        <section class="galleries-section">
+            <h2 class="section-title">Rwanda · 2023</h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
+            </div>
+            <div class="gallery-grid">
+                <!-- ADD YOUR RWANDA PHOTOS HERE -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
+                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="gallery-antarctica" class="hidden">
+        <div style="height: 80px;"></div>
+        <section class="galleries-section">
+            <h2 class="section-title">Antarctica · 2025</h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
+            </div>
+            <div class="gallery-grid">
+                <!-- ADD YOUR ANTARCTICA PHOTOS HERE -->
+                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
+                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Trent Baker Wildlife Photography. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showHome() {
+            document.getElementById('home-page').classList.remove('hidden');
+            document.getElementById('contact-page').classList.add('hidden');
+            document.getElementById('gallery-tanzania').classList.add('hidden');
+            document.getElementById('gallery-rwanda').classList.add('hidden');
+            document.getElementById('gallery-alaska').classList.add('hidden');
+            document.getElementById('gallery-antarctica').classList.add('hidden');
+            document.getElementById('gallery-galapagos').classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function showContact() {
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('contact-page').classList.remove('hidden');
+            document.getElementById('gallery-tanzania').classList.add('hidden');
+            document.getElementById('gallery-rwanda').classList.add('hidden');
+            document.getElementById('gallery-alaska').classList.add('hidden');
+            document.getElementById('gallery-antarctica').classList.add('hidden');
+            document.getElementById('gallery-galapagos').classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function showGallery(location) {
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('contact-page').classList.add('hidden');
+            document.getElementById('gallery-tanzania').classList.add('hidden');
+            document.getElementById('gallery-rwanda').classList.add('hidden');
+            document.getElementById('gallery-alaska').classList.add('hidden');
+            document.getElementById('gallery-antarctica').classList.add('hidden');
+            document.getElementById('gallery-galapagos').classList.add('hidden');
+            document.getElementById('gallery-' + location).classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
