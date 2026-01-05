@@ -19,7 +19,6 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -72,7 +71,6 @@
             font-size: 1.3rem;
         }
 
-        /* Hero Section */
         .hero {
             margin-top: 80px;
             height: 85vh;
@@ -92,7 +90,6 @@
             height: 30%;
         }
 
-        /* About Section */
         .about-section {
             max-width: 1200px;
             margin: 4rem auto;
@@ -132,7 +129,6 @@
             object-fit: cover;
         }
 
-        /* Galleries Section */
         .galleries-section {
             max-width: 1400px;
             margin: 6rem auto 4rem;
@@ -201,7 +197,19 @@
             text-transform: uppercase;
         }
 
-        /* Contact Section */
+        /* Gallery image styles */
+        .gallery-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+
         .contact-section {
             max-width: 800px;
             margin: 6rem auto;
@@ -268,7 +276,6 @@
             background: #8B7355;
         }
 
-        /* Footer */
         footer {
             background: #5C4A3A;
             color: #F5F1E8;
@@ -282,12 +289,10 @@
             letter-spacing: 1px;
         }
 
-        /* Hidden class for navigation */
         .hidden {
             display: none;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .about-section {
                 grid-template-columns: 1fr;
@@ -308,7 +313,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo">Trent Baker</div>
@@ -322,34 +326,24 @@
         </div>
     </nav>
 
-    <!-- Home Page -->
     <div id="home-page">
-        <!-- Hero -->
         <section class="hero">
             <div class="hero-overlay"></div>
         </section>
 
-        <!-- About Section -->
         <section class="about-section">
             <div class="about-text">
                 <h2>Capturing Wild Moments</h2>
-                <!-- EDIT YOUR BIO TEXT BELOW -->
-                <p>I started my photography journey during highschool when I had a kickass photography teacher named Mr. Oleson for a visual arts class. I realized quickly my love for photography and bought a Canon EOS 250D. Ended up having the opportunity to go to Alaska on a National Geographic Linblad boat and met a bunch of photographers-- but the most important one was Cindy Mirabella. She gave me invaluable advice and insight into the world of photography and at the end of our trip she offered to give me some of her old crop sensor sony lenses. My newly acquired nifty-50 and 36-210mm lenses became my bread and butter as soon as I upgraded to a Sony a6400. Since then I've been taking my camera around everytime I go on a trip. Ive found that photography really helps me appreciate the outdoors and wildlife to a further degree. Hope you enjoy my portfolio. </p>
-                <p></p>
-                <p></p>
-                <!-- END BIO TEXT -->
+                <p>I started my photography journey during highschool when I had a kickass photography teacher named Mr. Oleson for a visual arts class. I realized quickly my love for photography and bought a Canon EOS 250D. Ended up having the opportunity to go to Alaska on a National Geographic Linblad boat and met a bunch of photographers-- but the most important one was Cindy Mirabella. She gave me invaluable advice and insight into the world of photography and at the end of our trip she offered to give me some of her old crop sensor sony lenses. My newly acquired nifty-50 and 36-210mm lenses became my bread and butter as soon as I upgraded to a Sony a6400. Since then I've been taking my camera around everytime I go on a trip. Ive found that photography really helps me appreciate the outdoors and wildlife to a further degree. Hope you enjoy my portfolio.</p>
             </div>
             <div class="about-image">
-                <!-- REPLACE 'images/about-photo.jpg' WITH YOUR IMAGE PATH -->
                 <img src="images/about-photo.jpg" alt="Trent Baker">
             </div>
         </section>
 
-        <!-- Galleries -->
         <section class="galleries-section">
             <h2 class="section-title">Adventures</h2>
             <div class="gallery-grid">
-                <!-- ALASKA 2021 -->
                 <div class="gallery-card" onclick="showGallery('alaska')">
                     <img src="images/alaska-cover.jpg" alt="Alaska">
                     <div class="gallery-overlay">
@@ -357,7 +351,6 @@
                     </div>
                 </div>
 
-                <!-- GALAPAGOS 2022 -->
                 <div class="gallery-card" onclick="showGallery('galapagos')">
                     <img src="images/galapagos-cover.jpg" alt="Galapagos">
                     <div class="gallery-overlay">
@@ -365,7 +358,6 @@
                     </div>
                 </div>
 
-                <!-- TANZANIA 2023 -->
                 <div class="gallery-card" onclick="showGallery('tanzania')">
                     <img src="images/tanzania-cover.jpg" alt="Tanzania">
                     <div class="gallery-overlay">
@@ -373,7 +365,6 @@
                     </div>
                 </div>
 
-                <!-- RWANDA 2023 -->
                 <div class="gallery-card" onclick="showGallery('rwanda')">
                     <img src="images/rwanda-cover.jpg" alt="Rwanda">
                     <div class="gallery-overlay">
@@ -381,7 +372,6 @@
                     </div>
                 </div>
 
-                <!-- ANTARCTICA 2025 -->
                 <div class="gallery-card" onclick="showGallery('antarctica')">
                     <img src="images/antarctica-cover.jpg" alt="Antarctica">
                     <div class="gallery-overlay">
@@ -392,7 +382,6 @@
         </section>
     </div>
 
-    <!-- Contact Page -->
     <div id="contact-page" class="hidden">
         <div style="height: 80px;"></div>
         <section class="contact-section">
@@ -421,7 +410,6 @@
         </section>
     </div>
 
-    <!-- Gallery Pages -->
     <div id="gallery-alaska" class="hidden">
         <div style="height: 80px;"></div>
         <section class="galleries-section">
@@ -429,13 +417,7 @@
             <div style="text-align: center; margin-bottom: 2rem;">
                 <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
             </div>
-            <div class="gallery-grid">
-                <!-- ADD YOUR ALASKA PHOTOS HERE -->
-                <!-- Example: <img src="images/alaska/photo1.jpg" alt="Alaska wildlife"> -->
-                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
-                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
-                </div>
-            </div>
+            <div id="alaska-gallery" class="gallery-grid"></div>
         </section>
     </div>
 
@@ -446,12 +428,7 @@
             <div style="text-align: center; margin-bottom: 2rem;">
                 <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
             </div>
-            <div class="gallery-grid">
-                <!-- ADD YOUR GALAPAGOS PHOTOS HERE -->
-                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
-                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
-                </div>
-            </div>
+            <div id="galapagos-gallery" class="gallery-grid"></div>
         </section>
     </div>
 
@@ -462,12 +439,7 @@
             <div style="text-align: center; margin-bottom: 2rem;">
                 <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
             </div>
-            <div class="gallery-grid">
-                <!-- ADD YOUR TANZANIA PHOTOS HERE -->
-                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
-                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
-                </div>
-            </div>
+            <div id="tanzania-gallery" class="gallery-grid"></div>
         </section>
     </div>
 
@@ -478,12 +450,7 @@
             <div style="text-align: center; margin-bottom: 2rem;">
                 <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
             </div>
-            <div class="gallery-grid">
-                <!-- ADD YOUR RWANDA PHOTOS HERE -->
-                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
-                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
-                </div>
-            </div>
+            <div id="rwanda-gallery" class="gallery-grid"></div>
         </section>
     </div>
 
@@ -494,21 +461,58 @@
             <div style="text-align: center; margin-bottom: 2rem;">
                 <a href="#" onclick="showHome(); return false;" style="color: #5C4A3A; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px;">← Back to Home</a>
             </div>
-            <div class="gallery-grid">
-                <!-- ADD YOUR ANTARCTICA PHOTOS HERE -->
-                <div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;">
-                    <p style="font-size: 1.2rem;">Gallery images will be added here</p>
-                </div>
-            </div>
+            <div id="antarctica-gallery" class="gallery-grid"></div>
         </section>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Trent Baker Wildlife Photography. All rights reserved.</p>
     </footer>
 
     <script>
+        // Gallery configuration
+        const galleries = {
+            'alaska-gallery': 'alaska',
+            'galapagos-gallery': 'galapagos',
+            'tanzania-gallery': 'tanzania',
+            'rwanda-gallery': 'rwanda',
+            'antarctica-gallery': 'antarctica'
+        };
+
+        // Load images for a gallery
+        async function loadGallery(galleryId, folderName) {
+            const galleryContainer = document.getElementById(galleryId);
+            if (!galleryContainer) return;
+            
+            try {
+                const response = await fetch(`images/${folderName}/images.json`);
+                const imageList = await response.json();
+                
+                galleryContainer.innerHTML = '';
+                
+                imageList.forEach(imageName => {
+                    const img = document.createElement('img');
+                    img.src = `images/${folderName}/${imageName}`;
+                    img.alt = `${folderName} photo`;
+                    img.className = 'gallery-image';
+                    img.loading = 'lazy';
+                    img.onclick = () => window.open(img.src, '_blank');
+                    
+                    galleryContainer.appendChild(img);
+                });
+            } catch (error) {
+                console.error(`Failed to load gallery ${folderName}:`, error);
+                galleryContainer.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: #8B7355;"><p style="font-size: 1.2rem;">Gallery images coming soon...</p></div>';
+            }
+        }
+
+        // Load all galleries when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            Object.entries(galleries).forEach(([galleryId, folderName]) => {
+                loadGallery(galleryId, folderName);
+            });
+        });
+
         function showHome() {
             document.getElementById('home-page').classList.remove('hidden');
             document.getElementById('contact-page').classList.add('hidden');
